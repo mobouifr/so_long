@@ -16,10 +16,6 @@
 
 ---
 
-<div align="center">
-  <img src="screenshots/so_long.png" alt="so_long gameplay" width="80%"/>
-</div>
-
 ---
 
 ## What is this?
@@ -83,10 +79,10 @@ Collect every **C**, then step onto **E**. The player cannot walk through walls.
 </div>
 
 <details>
-<summary>Raw keycodes (macOS MiniLibX)</summary>
+<summary>Raw keycodes (Linux MiniLibX)</summary>
 
 ```
-Up: 126  ·  Down: 125  ·  Left: 123  ·  Right: 124  ·  ESC: 53
+Up: 65362  ·  Down: 65364  ·  Left: 65361  ·  Right: 65363  ·  ESC: 65307
 ```
 
 </details>
@@ -144,43 +140,23 @@ so_long/
 
 ## Getting started
 
-### macOS
-
 ```bash
+git clone https://github.com/mobouifr/so_long.git
+cd so_long
 make
 ./so_long maps/map.ber
 ```
 
-### Linux
+> Always launch from the project root — texture paths are relative (`textures/*.xpm`).
 
-```bash
-# Install X11 dependencies
-sudo apt-get install gcc make xorg libxext-dev libbsd-dev
+### Makefile rules
 
-# Build MiniLibX
-cd minilibx-linux && sh ./configure && cd ..
-
-# Compile
-cc -Wall -Wextra -Werror -Iminilibx-linux         \
-  so_long.c so_long_utils_00.c so_long_utils_01.c \
-  so_long_utils_02.c so_long_utils_03.c           \
-  so_long_mvp_utils.c ft_putnbr_nl.c              \
-  get_next_line/get_next_line.c                    \
-  get_next_line/get_next_line_utils.c              \
-  -Lminilibx-linux -lmlx -L/usr/lib               \
-  -lXext -lX11 -lm -lbsd -o so_long
-
-./so_long maps/map.ber
-```
-
-<details>
-<summary>Notes on platform compatibility</summary>
-
-- The top-level `Makefile` currently links with `-framework OpenGL -framework AppKit` (macOS only). The Linux compile above is the manual equivalent until the Makefile is unified.
-- Always launch from the project root — texture paths are relative (`textures/*.xpm`).
-- Tile rendering composites the floor image first in memory before overlaying sprites, avoiding XPM transparency inconsistencies between macOS and Linux MiniLibX builds.
-
-</details>
+| Rule | Effect |
+|---|---|
+| `make` | Compile `so_long` |
+| `make clean` | Remove object files |
+| `make fclean` | Remove objects and binary |
+| `make re` | Full rebuild |
 
 ---
 
@@ -189,3 +165,7 @@ cc -Wall -Wextra -Werror -Iminilibx-linux         \
 - [MiniLibX documentation](https://harm-smits.github.io/42docs/libs/minilibx)
 - `man 2 open` · `man 2 read` · `man 2 close` · `man 3 malloc` · `man 3 free`
 - 42 so_long subject guidelines
+
+### AI usage
+
+AI assistance was used to structure and write this README based on the actual source files and project behavior. It was not used to generate code or invent features not present in the codebase.
