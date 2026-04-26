@@ -17,7 +17,7 @@
 ---
 
 <div align="center">
-  <img src="screenshots/so_long.png" alt="so_long gameplay" width="80%"/>
+  <img src="screenshots/so_long.png" alt="so_long gameplay" width="70%"/>
 </div>
 
 ---
@@ -52,6 +52,8 @@ Collect every **C**, then step onto **E**. The player cannot walk through walls.
 
 ## Features
 
+<div align="center">
+  
 | Feature | | Notes |
 |---|:---:|---|
 | `.ber` map loading | ✓ | Line-by-line via `get_next_line` |
@@ -65,6 +67,8 @@ Collect every **C**, then step onto **E**. The player cannot walk through walls.
 | Movement + collision | ✓ | Arrow keys — target tile must be valid |
 | Win condition | ✓ | Exit only triggers after all collectibles |
 | ESC / window-close | ✓ | Both paths call clean shutdown |
+
+</div>
 
 ---
 
@@ -155,12 +159,16 @@ make
 
 ### Makefile rules
 
+<div align="center">
+
 | Rule | Effect |
 |---|---|
 | `make` | Compile `so_long` |
 | `make clean` | Remove object files |
 | `make fclean` | Remove objects and binary |
 | `make re` | Full rebuild |
+
+</div>
 
 ---
 
