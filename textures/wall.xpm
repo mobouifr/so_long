@@ -194,7 +194,7 @@ static char *result[] = {
 "+X c #9DC042",
 "@X c #A6C448",
 "#X c #A3C346",
-"$X c #141C1C",
+"$X c None",
 /* pixels */
 "$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X",
 "$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$XI s a I y.s.p.y.S g a p.U $X$X$X$X$X$X$X$X$X$X$X$X$X$X$X$X",
