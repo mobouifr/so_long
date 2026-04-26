@@ -73,7 +73,10 @@ void	draw_map(t_game *game)
 int	move_player(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
+	{
 		close_window(game);
+		return (0);
+	}
 	if (keycode == KEY_DOWN)
 		move_player_down(game);
 	else if (keycode == KEY_UP)
