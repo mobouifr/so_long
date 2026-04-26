@@ -23,11 +23,28 @@ SRC = so_long.c\
 OBJ = $(SRC:.c=.o)
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
+UNAME_S := $(shell uname -s)
+
+ifeq ($(UNAME_S),Linux)
+MLX_DIR = minilibx-linux
+CPPFLAGS = -I$(MLX_DIR)
+MLX_FLAGS = -L$(MLX_DIR) -lmlx -L/usr/lib -lXext -lX11 -lm -lbsd
+MLX_BUILD = $(MAKE) -C $(MLX_DIR)
+else
+MLX_DIR = minilibx_macos_opengl/minilibx_opengl_20191021
+CPPFLAGS = -I$(MLX_DIR)
+MLX_FLAGS = -L$(MLX_DIR) -lmlx -framework OpenGL -framework AppKit
+MLX_BUILD = $(MAKE) -C $(MLX_DIR)
+endif
 
 all: $(NAME)
 
 $(NAME): $(OBJ)
-	$(CC) $(CFLAGS) -lmlx -framework OpenGL -framework AppKit $(OBJ) -o $(NAME)
+	$(MLX_BUILD)
+	$(CC) $(CFLAGS) $(OBJ) $(MLX_FLAGS) -o $(NAME)
+
+%.o: %.c so_long.h
+	$(CC) $(CFLAGS) $(CPPFLAGS) -c $< -o $@
 
 clean:
 	rm -rf $(OBJ)

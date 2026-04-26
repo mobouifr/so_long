@@ -1,0 +1,10 @@
+so_long
+*.o
+*.a
+Makefile.gen
+minilibx-linux/obj/
+minilibx-linux/libmlx*.a
+minilibx-linux/test/Makefile.gen
+minilibx-linux/test/mlx-test
+**/._*
+.DS_Store

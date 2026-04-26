@@ -36,8 +36,18 @@ void	map_alloc(t_game *game)
 void	mlx_utils(t_game game)
 {
 	game.mlx = mlx_init();
+	if (game.mlx == NULL)
+	{
+		write(2, "Error\nMLX initialization failed\n", 32);
+		exit(1);
+	}
 	game.window = mlx_new_window(game.mlx, (game.width * 45), (game.hight * 45),
 			"so_long");
+	if (game.window == NULL)
+	{
+		write(2, "Error\nWindow initialization failed\n", 35);
+		exit(1);
+	}
 	game.wall = mlx_xpm_file_to_image(game.mlx, "textures/wall.xpm", &game.w,
 			&game.h);
 	game.collectible = mlx_xpm_file_to_image(game.mlx,
