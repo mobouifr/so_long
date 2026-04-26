@@ -16,6 +16,10 @@
 
 ---
 
+<div align="center">
+  <img src="screenshots/so_long.png" alt="so_long gameplay" width="80%"/>
+</div>
+
 ---
 
 ## What is this?
@@ -165,7 +169,3 @@ make
 - [MiniLibX documentation](https://harm-smits.github.io/42docs/libs/minilibx)
 - `man 2 open` · `man 2 read` · `man 2 close` · `man 3 malloc` · `man 3 free`
 - 42 so_long subject guidelines
-
-### AI usage
-
-AI assistance was used to structure and write this README based on the actual source files and project behavior. It was not used to generate code or invent features not present in the codebase.
