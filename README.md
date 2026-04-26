@@ -7,6 +7,10 @@
 ![Graphics](https://img.shields.io/badge/graphics-MiniLibX-orange?style=flat-square)
 ![42 Norm](https://img.shields.io/badge/norm-42%20style-informational?style=flat-square)
 
+## Screenshot
+
+![so_long screenshot](screenshots/so_long.png)
+
 ---
 
 ## Description
