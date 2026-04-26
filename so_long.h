@@ -31,7 +31,7 @@
 #  define KEY_LEFT 123
 #  define KEY_RIGHT 124
 # endif
-# define TILE_SIZE 64
+# define TILE_SIZE 128
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
