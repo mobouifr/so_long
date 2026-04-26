@@ -19,6 +19,7 @@ Under the hood it is a clean introduction to practical engine fundamentals — n
 - Managing dynamic memory for map storage
 - Handling keyboard input and event hooks
 - Rendering sprite tiles in a loop with MiniLibX
+- Compositing each tile from the floor image first so overlays stay consistent on macOS and Linux
 - Enforcing gameplay rules: collision, collectible tracking, win condition
 
 ---
@@ -148,6 +149,8 @@ cc -Wall -Wextra -Werror -Iminilibx-linux \
 > The top-level Makefile currently links with `-framework OpenGL -framework AppKit` (macOS only). The Linux compile above is the manual equivalent until the Makefile is unified.
 
 > Always launch from the project root — texture paths are relative (`textures/*.xpm`).
+
+> Tile rendering is done by compositing the floor into an in-memory tile image first, then overlaying walls, collectibles, exit, or player sprites. This avoids relying on MiniLibX XPM transparency differences between macOS and Linux.
 
 ---
 
