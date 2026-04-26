@@ -72,15 +72,15 @@ void	draw_map(t_game *game)
 
 int	move_player(int keycode, t_game *game)
 {
-	if (keycode == 53)
+	if (keycode == KEY_ESC)
 		close_window(game);
-	if (keycode == 125)
+	if (keycode == KEY_DOWN)
 		move_player_down(game);
-	else if (keycode == 126)
+	else if (keycode == KEY_UP)
 		move_player_up(game);
-	else if (keycode == 123)
+	else if (keycode == KEY_LEFT)
 		move_player_left(game);
-	else if (keycode == 124)
+	else if (keycode == KEY_RIGHT)
 		move_player_right(game);
 	mlx_clear_window(game->mlx, game->window);
 	draw_map(game);

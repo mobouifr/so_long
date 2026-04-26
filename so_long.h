@@ -17,6 +17,20 @@
 # include <fcntl.h>
 # include <limits.h>
 # include <mlx.h>
+# ifdef __linux__
+#  include <X11/keysym.h>
+#  define KEY_ESC XK_Escape
+#  define KEY_UP XK_Up
+#  define KEY_DOWN XK_Down
+#  define KEY_LEFT XK_Left
+#  define KEY_RIGHT XK_Right
+# else
+#  define KEY_ESC 53
+#  define KEY_UP 126
+#  define KEY_DOWN 125
+#  define KEY_LEFT 123
+#  define KEY_RIGHT 124
+# endif
 # include <stdarg.h>
 # include <stdio.h>
 # include <stdlib.h>
