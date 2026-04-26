@@ -53,19 +53,19 @@ void	draw_map(t_game *game)
 		while (game->map[j][++i] != '\0')
 		{
 			mlx_put_image_to_window(game->mlx, game->window, game->floor, (i
-					* TILE_SIZE), (j * TILE_SIZE));
+					* 45), (j * 45));
 			if (game->map[j][i] == '1')
 				mlx_put_image_to_window(game->mlx, game->window, game->wall, (i
-						* TILE_SIZE), (j * TILE_SIZE));
+						* 45), (j * 45));
 			if (game->map[j][i] == 'C')
 				mlx_put_image_to_window(game->mlx, game->window,
-					game->collectible, (i * TILE_SIZE), (j * TILE_SIZE));
+					game->collectible, (i * 45), (j * 45));
 			if (game->map[j][i] == 'E')
 				mlx_put_image_to_window(game->mlx, game->window, game->exit, (i
-						* TILE_SIZE), (j * TILE_SIZE));
+						* 45), (j * 45));
 			if (game->map[j][i] == 'P')
 				mlx_put_image_to_window(game->mlx, game->window, game->player,
-					(i * TILE_SIZE), (j * TILE_SIZE));
+					(i * 45), (j * 45));
 		}
 	}
 }

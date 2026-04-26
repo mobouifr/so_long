@@ -41,7 +41,7 @@ void	mlx_utils(t_game game)
 		write(2, "Error\nMLX initialization failed\n", 32);
 		exit(1);
 	}
-	game.window = mlx_new_window(game.mlx, (game.width * TILE_SIZE), (game.hight * TILE_SIZE),
+	game.window = mlx_new_window(game.mlx, (game.width * 45), (game.hight * 45),
 			"so_long");
 	if (game.window == NULL)
 	{
